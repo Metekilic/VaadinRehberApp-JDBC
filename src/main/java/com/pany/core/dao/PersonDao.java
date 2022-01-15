@@ -133,26 +133,4 @@ public class PersonDao {
         }
         return false;
     }
-
-    public Person findPersonById(Long id) {
-
-        Connection con;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/uniyaz", "root", "root");
-            PreparedStatement pst = con
-                    .prepareStatement("Select * from kullanicilar WHERE  id="+id);
-            ResultSet resultSet = pst.executeQuery();
-            resultSet.next();
-            //pst.setString(1, );
-
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }
